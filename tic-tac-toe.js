@@ -26,5 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
       // Switch player
       currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     });
+
+//Exercise 3
+
+     // Add mouseover event to add hover effect
+    square.addEventListener('mouseenter', function() {
+        square.classList.add('hover');
+    });
+
+    // Add mouseout event to remove hover effect
+    square.addEventListener('mouseleave', function() {
+        square.classList.remove('hover');
+    });
   });
 });
