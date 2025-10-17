@@ -1,1 +1,3 @@
-# info2180-lab3
+# Info2180 Lab3
+
+This is Lab 3 for Zakyla Petrie
