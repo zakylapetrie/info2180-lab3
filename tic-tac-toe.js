@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add click event listener to each square
     square.addEventListener('click', function() {
+
+      // Check if square is already filled - Exercise 6
+      if (gameState[index] !== '') {
+        return; // Don't allow changing an already filled square
+      }
+
       // Place X or O in the square
       square.textContent = currentPlayer;
       square.classList.add(currentPlayer);
