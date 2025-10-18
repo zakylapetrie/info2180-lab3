@@ -1,4 +1,4 @@
-//
+//Exercise 1
 document.addEventListener('DOMContentLoaded', function() {
   // Get div elements inside the board
   const board = document.getElementById('board');
@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
   squares.forEach(function(square) {
     square.classList.add('square');
 
+ //Exercise 2   
   // Initialize game state
   let currentPlayer = 'X';
   let gameState = ['', '', '', '', '', '', '', '', ''];
   const statusDiv = document.getElementById('status');
+  const newGameButton = document.querySelector('.btn');
     
     // Add click event listener to each square
     square.addEventListener('click', function() {
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
       currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     });
 
-
+//Exercise 3
      // Add mouseover event to add hover effect
     square.addEventListener('mouseenter', function() {
         square.classList.add('hover');
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+//Exercise 4
   // Function to check for a winner
   function checkWinner() {
     // All possible winning combinations
@@ -69,4 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   } 
+
+  //Exercise 5
+    // New Game button click handler
+  newGameButton.addEventListener('click', function() {
+    // Reset game state
+    gameState = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'X';
+    
+    // Clear all squares
+    squares.forEach(function(square) {
+      square.textContent = '';
+      square.classList.remove('X', 'O');
+    });
+    
+    // Reset status message
+    statusDiv.textContent = 'Move your mouse over a square and click to play an X or an O.';
+    statusDiv.classList.remove('you-won');
+  });
 });
